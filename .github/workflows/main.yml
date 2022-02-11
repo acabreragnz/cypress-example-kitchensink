@@ -5,6 +5,8 @@ on: [push]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    container:
+      image: kirschbaumdevelopment/laravel-test-runner:8.1
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -15,3 +17,4 @@ jobs:
         with:
           build: npm run build
           start: npm start
+          
